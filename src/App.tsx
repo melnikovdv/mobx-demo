@@ -10,9 +10,7 @@ function App() {
     <>
       <div className="contrainer max-w-5xl mx-auto px-4 py-8">
         <h1 className="text-4xl mb-6">MobX demo</h1>
-        <div className="space-y-6">
-          <Counter counterStore={counterStore} />
-        </div>
+        <Counter counterStore={ counterStore } />
       </div>
     </>
   )
