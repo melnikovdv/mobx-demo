@@ -1,14 +1,14 @@
-import { useEffect, useMemo } from "react"
-import { rootStore } from "src/stores/RootStore"
-import { AssetsList } from "src/components/AssetsList"
-import { AssetRates } from "src/components/AssetRates"
+import { useMemo } from "react"
+import { RootStore } from "src/stores/RootStore"
 import { Counter } from "src/counter/Counter"
 import { CounterStore } from "src/counter/CounterStore"
+import { AssetsGrid } from "src/components/AssetsGrid"
 
 export function App() {
-  // Initialize the root store when the component mounts
-  useEffect(() => {
-    rootStore.initialize()
+  const rootStore = useMemo(() => {
+    const store = new RootStore()
+    store.initialize().catch(reason => console.error("Failed to initialize store:", reason))
+    return store
   }, [])
 
   const counterStore: CounterStore = useMemo(() => new CounterStore(), [])
@@ -16,17 +16,10 @@ export function App() {
   return (
     <>
       <div className="container max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl mb-6">MobX Assets Demo</h1>
+        <h1 className="text-4xl mb-6">MobX Demo</h1>
         <div className="space-y-8">
           <Counter counterStore={ counterStore } />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <AssetsList />
-            </div>
-            <div>
-              <AssetRates />
-            </div>
-          </div>
+          <AssetsGrid rootStore={ rootStore } />
         </div>
       </div>
     </>
