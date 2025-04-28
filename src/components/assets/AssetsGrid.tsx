@@ -1,5 +1,5 @@
 import React from "react"
-import { AssetsList } from "./AssetsList"
+import { AssetsList } from "src/components/assets/AssetsList.tsx"
 import { AssetRates } from "./AssetRates"
 import { RootStore } from "src/stores/RootStore.ts"
 

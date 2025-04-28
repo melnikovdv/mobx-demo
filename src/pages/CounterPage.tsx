@@ -1,5 +1,5 @@
-import { CounterStore } from "src/counter/CounterStore"
-import { Counter } from "src/counter/Counter"
+import { CounterStore } from "src/stores/CounterStore"
+import { Counter } from "src/components/counter/Counter"
 import { useMemo } from "react"
 
 export function CounterPage() {

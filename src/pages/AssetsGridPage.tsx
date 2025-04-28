@@ -1,4 +1,4 @@
-import { AssetsGrid } from "src/components/AssetsGrid"
+import { AssetsGrid } from "src/components/assets/AssetsGrid"
 import { RootStore } from "src/stores/RootStore"
 import { useMemo } from "react"
 
