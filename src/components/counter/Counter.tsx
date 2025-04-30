@@ -1,4 +1,4 @@
-import { CounterStore } from "./CounterStore"
+import { CounterStore } from "src/stores/CounterStore"
 
 interface CounterProps {
   counterStore: CounterStore
