@@ -16,7 +16,8 @@ export class AssetsStore {
   selectedAssetId: number | null = null
 
   constructor(private apiClient: FakeApiClient) {
-    makeAutoObservable(this)
+    this.apiClient = apiClient
+    makeAutoObservable<AssetsStore, "apiClient">(this, { apiClient: false })
   }
 
   /**

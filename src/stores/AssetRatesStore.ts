@@ -15,7 +15,7 @@ export class AssetRatesStore {
   error: string | null = null
 
   constructor(private apiClient: FakeApiClient) {
-    makeAutoObservable(this)
+    makeAutoObservable<AssetRatesStore, "apiClient">(this, { apiClient: false })
   }
 
   /**
